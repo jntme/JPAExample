@@ -16,9 +16,6 @@ public class Subject {
     @ManyToOne
     private Teacher teacher;
 
-    @ManyToMany(mappedBy = "subject")
-    private List<Student> students = new ArrayList<Student>();
-
     public Subject(int ects, String name) {
         this.ects = ects;
         this.name = name;
@@ -49,10 +46,6 @@ public class Subject {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
-    }
-
-    public void addStudent(Student student) {
-        this.students.add(student);
     }
 }
 

@@ -13,9 +13,6 @@ public class Student {
     @GeneratedValue
     private String id;
 
-    @ManyToMany
-    private List<Subject> subjects = new ArrayList<Subject>();
-
     public Student(String name, String prename, String birthdate) {
         this.name = name;
         this.prename = prename;

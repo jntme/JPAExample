@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        EntityManager em = Persistence.createEntityManagerFactory("sophobia").createEntityManager();
+        EntityManager em = Persistence.createEntityManagerFactory("school").createEntityManager();
 
         Student hans = new Student("Muster", "Hans", "12.12.2012");
         Student fritz = new Student("Heimrich", "Fritz", "12.12.2017");
@@ -22,7 +22,6 @@ public class Main {
         Subject se = new Subject(6, "Software Engineering");
         Subject db = new Subject(6, "Databases");
 
-        se.addStudent(hans);
         se.setTeacher(t1);
 
         EntityTransaction t = em.getTransaction();
