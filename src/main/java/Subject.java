@@ -1,20 +1,18 @@
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Subject {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private int ects;
     private String name;
 
-    @ManyToOne
-    private Teacher teacher;
+//    @ManyToOne
+//    private TeachingStaff staff;
 
     public Subject(int ects, String name) {
         this.ects = ects;
@@ -40,12 +38,12 @@ public class Subject {
         this.name = name;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
+//    public Staff getStaff() {
+//        return staff;
+//    }
+//
+//    public void setTeachingStaff(TeachingStaff staff) {
+//        this.staff = staff;
+//    }
 }
 

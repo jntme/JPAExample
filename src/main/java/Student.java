@@ -10,7 +10,7 @@ public class Student {
     private String birthdate;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     public Student(String name, String prename, String birthdate) {

@@ -1,10 +1,18 @@
 import javax.persistence.*;
 
 @Entity
-public class Teacher {
+//for JOINED_TABLE:
+//@Inheritance( strategy = InheritanceType.JOINED )
+//@DiscriminatorColumn(name="type")
+//for SINGLE_TABLE:
+//@Inheritance
+//@DiscriminatorColumn(name="type")
+//for TABLE_PER_CLASS:
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class Staff {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String name;
@@ -14,13 +22,13 @@ public class Teacher {
     @Transient
     private String thoughts;
 
-    public Teacher(String name, String prename, String birthdate) {
+    public Staff(String name, String prename, String birthdate) {
         this.name = name;
         this.prename = prename;
         this.birthdate = birthdate;
     }
 
-    public Teacher() {
+    public Staff() {
     }
 
     public String getName() {
